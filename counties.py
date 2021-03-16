@@ -6,9 +6,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_main():
+    with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
     return render_template('select.html')
 
-
+def get_state_options(counties):
+    listOfStates = []
+    for county in counties:
+        if not county["State"] in counties:
+            listOfStates.append(county["State"])
 
 
 
