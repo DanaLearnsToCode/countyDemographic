@@ -3,9 +3,15 @@
  <head><title>County Demographic Website</title>
  </head>
  <body>
-   <label for="states">Choose a state</label>
-   <select name="states">
+   <form action="">
+    <select name="states">
      <option value={{state}}>{{state}}</option>
-   </select>
+    </select>
+    <br><br>
+    <input type="submit" value="Get a fun fact">
+  </form>
+  <div id="funFact">
+   <p>{{fact}}</p>
+  </div>
  </body>
 </html>
