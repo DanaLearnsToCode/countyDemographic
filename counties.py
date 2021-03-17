@@ -15,7 +15,9 @@ def get_state_options(counties):
     for county in counties:
         if not county["State"] in counties:
             listOfStates.append(county["State"])
-
+    options = ""
+    for state in listOfStates:
+        options = options + Markup("<option value=\"" + state + "\">" + state + "</option>")
 
 
 if __name__=="__main__":
