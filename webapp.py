@@ -24,7 +24,10 @@ def get_state_options(counties):
 
 @app.route("/stateFact")
 def render_response():
-    return render_template('answer.html', fact = get_fact(state))
+    return render_template('answer.html', fact = get_fact(counties))
+
+def get_Fact(counties):
+    
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
