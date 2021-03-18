@@ -19,7 +19,7 @@ def get_state_options(counties):
     options = ""
     for state in listOfStates:
         options = options + Markup("<option value=\"" + state + "\">" + state + "</option>")
-    return render_template('select.html', state = options, fact = "")
+    return options
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
