@@ -10,6 +10,7 @@ def render_main():
         counties = json.load(demographics_data)
     return render_template('base.html')
 
+@app.route("/getState")
 def get_state_options(counties):
     listOfStates = []
     for county in counties:
