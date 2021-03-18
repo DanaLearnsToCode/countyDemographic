@@ -14,7 +14,7 @@ def render_main():
 def get_state_options(counties):
     listOfStates = []
     for county in counties:
-        if not county["State"] in counties:
+        if county["State"] not in listOfStates:
             listOfStates.append(county["State"])
     print(listOfStates)
     options = ""
