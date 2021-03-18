@@ -22,5 +22,9 @@ def get_state_options(counties):
         options = options + Markup("<option value=\"" + state + "\">" + state + "</option>")
     return options
 
+@app.route("/stateFact")
+def render_response():
+    return render_template('answer.html', fact = get_fact(state))
+
 if __name__=="__main__":
     app.run(debug=False, port=54321)
