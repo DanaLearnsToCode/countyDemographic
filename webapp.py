@@ -21,11 +21,11 @@ def get_state_options(counties):
     return options
 
 def get_fact(options, counties):
-    funFact = "The average population per square mile of this state is "
+    funFact = "The population of this state (in 2014) was "
     county_pop = 0
     for county in counties:
         if county["State"] == options:
-            county_pop = county_pop + county["Population"]["Population per Square Mile"]
+            county_pop = county_pop + county["Population"]["2014 Population"]
     fun_fact = fun_fact + str(county_pop)
     return fun_fact
 
