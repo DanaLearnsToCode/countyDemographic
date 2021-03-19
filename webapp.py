@@ -23,7 +23,7 @@ def get_state_options(counties):
 def get_fact(counties):
     county_pop = 0
     for county in counties:
-        if county["State"] == :
+        if county["State"] == states:
             county_pop = county_pop + county["Population"]["2014 Population"]
     fun_fact = "The population of" + states + "in 2014 was " + str(county_pop)
     return fun_fact
