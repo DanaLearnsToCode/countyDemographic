@@ -21,12 +21,11 @@ def get_state_options(counties):
     return options
 
 def get_fact(counties):
-    funFact = "The population of" + states + "in 2014 was "
     county_pop = 0
     for county in counties:
         if county["State"] == :
             county_pop = county_pop + county["Population"]["2014 Population"]
-    fun_fact = fun_fact + str(county_pop)
+    fun_fact = "The population of" + states + "in 2014 was " + str(county_pop)
     return fun_fact
 
 if __name__=="__main__":
