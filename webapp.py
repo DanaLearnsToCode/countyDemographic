@@ -8,7 +8,7 @@ app = Flask(__name__)
 def render_main():
     return render_template('select.html', options=get_state_options())
 
-@app.route("/funFact")
+@app.route("/stateFact")
 def render_fun_fact():
     state_chosen = request.args['states']
     return render_template('select.html', options=get_state_options(), stateFact=get_fact(state_chosen))
