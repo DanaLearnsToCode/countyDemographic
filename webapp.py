@@ -6,17 +6,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_main():
-    with open('county_demographics.json') as demographics_data:
-        counties = json.load(demographics_data)
-    return render_template('select.html', options=get_state_options(), fact = get_fact(counties))
+    return render_template('select.html', options=get_state_options())
 
 @app.route("/")
 def render_fun_fact():
     state_chosen = request.args['states']
-    return render_template('select.html', options=get_state_options(), fact = get_fact(counties), stateFact=get_fact(state_chosen))
+    return render_template('select.html', options=get_state_options(), stateFact=get_fact(state_chosen))
 
 def get_state_options():
     listOfStates = []
+    with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
     for county in counties:
         if county["State"] not in listOfStates:
             listOfStates.append(county["State"])
@@ -30,9 +30,9 @@ def get_fact(state):
         counties = json.load(demographics_data)
     county_pop = 0
     for county in counties:
-        if county["State"] == states:
+        if county["State"] == state:
             county_pop = county_pop + county["Population"]["2014 Population"]
-    fun_fact = "The population of" + states + "in 2014 was " + str(county_pop)
+    fun_fact = "The population of" + state + "in 2014 was " + str(county_pop)
     return fun_fact
 
 if __name__=="__main__":
