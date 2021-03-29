@@ -11,7 +11,7 @@ def render_main():
     return render_template('select.html', options=get_state_options(), fact = get_fact(counties))
 
 @app.route("/")
-def render_fun_fact
+def render_fun_fact():
     state_chosen = request.args['states']
     return render_template('select.html', options=get_state_options(), fact = get_fact(counties), stateFact=get_fact(state_chosen))
 
