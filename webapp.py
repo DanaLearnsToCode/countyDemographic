@@ -32,7 +32,7 @@ def get_fact(state):
     for county in counties:
         if county["State"] == state:
             county_pop = county_pop + county["Population"]["2014 Population"]
-    fun_fact = "The population of" + state + "in 2014 was " + str(county_pop)
+    fun_fact = "The population of " + state + " in 2014 was " + str(county_pop)
     return fun_fact
 
 if __name__=="__main__":
