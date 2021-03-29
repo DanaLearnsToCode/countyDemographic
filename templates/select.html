@@ -3,7 +3,7 @@
  <head><title>County Demographic Website</title>
  </head>
  <body>
-   <form action="/stateFact">
+   <form action="/stateFacts">
     <select name="states">
      <!-- <option value={{state}}>{{state}}</option> -->
      {{options}}<!--Markup("<option value=\"" + {{state}} + "\">" + {{state}} + "</option>")-->
@@ -11,8 +11,6 @@
     <br><br>
     <input type="submit" value="Get a fun fact">
   </form>
-  <div id="funFact">
    <p>{{stateFact}}</p>
-  </div>
  </body>
 </html>
