@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/funFact")
 def render_main():
     return render_template('select.html', options=get_state_options())
 
