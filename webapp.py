@@ -8,9 +8,14 @@ app = Flask(__name__)
 def render_main():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
-    return render_template('select.html', state = get_state_options(counties), fact = get_fact(counties))
+    return render_template('select.html', options=get_state_options(), fact = get_fact(counties))
 
-def get_state_options(counties):
+@app.route("/")
+def render_fun_fact
+    state_chosen = request.args['states']
+    return render_template('select.html', options=get_state_options(), fact = get_fact(counties), stateFact=get_fact(state_chosen))
+
+def get_state_options():
     listOfStates = []
     for county in counties:
         if county["State"] not in listOfStates:
@@ -20,7 +25,9 @@ def get_state_options(counties):
         options = options + Markup("<option value=\"" + state + "\">" + state + "</option>")
     return options
 
-def get_fact(counties):
+def get_fact(state):
+    with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
     county_pop = 0
     for county in counties:
         if county["State"] == states:
